@@ -2,7 +2,7 @@ node {
     agent any
 
        stage('clone') {
-        	 Checkout GDS
+        	 Checkout SCM
         }
 
   
