@@ -1,6 +1,10 @@
 node {
     agent any
     def myapp
+     stages {
+        Checkout GDS
+        }
+
     stages {
         stage('build image'){    
                 myapp = docker.build(“monapp”)
