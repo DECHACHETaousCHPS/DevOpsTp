@@ -1,6 +1,6 @@
 node {
 
-          
+     stages{ 
         stage('build image'){ 
             steps{   
                 sh "sudo docker build -t monapp . "
@@ -14,6 +14,6 @@ node {
                
         }
         
-    
+    }
     
  }
