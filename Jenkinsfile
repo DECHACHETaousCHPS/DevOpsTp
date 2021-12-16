@@ -1,11 +1,11 @@
 node {
     agent any
-    def myapp
-     stages {
-        Checkout GDS
+
+       stage('clone') {
+        	 Checkout GDS
         }
 
-    stages {
+  
         stage('build image'){    
                 sh "/home/ubuntu/DevOpsTp"
                 sh "sudo docker build -t monapp . "
