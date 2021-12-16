@@ -7,11 +7,12 @@ node {
 
     stages {
         stage('build image'){    
-                myapp = docker.build(“monapp”)
+                sh "/home/ubuntu/DevOpsTp"
+                sh "sudo docker build -t monapp . "
          
         }
         stage('Run Image') {
-                docker.image(‘monapp’).withRun(‘-p 80:80’ ) { c ->
+                sh " sudo docker run -p 80:8080 monapp "
                 sh ‘docker ps’
                 sh ‘curl localhost’
         }
