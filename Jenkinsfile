@@ -1,9 +1,9 @@
 node {
     agent any
 
-       stage('clone') {
-        	 Checkout SCM
-        }
+
+
+
 
   
         stage('build image'){    
