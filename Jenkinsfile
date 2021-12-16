@@ -11,7 +11,7 @@ node {
          
         }
         stage('Run Image') {
-                docker.image(‘monapp’).withRun(‘ -p 8080’ ) { c ->
+                docker.image(‘monapp’).withRun(‘-p 80:80’ ) { c ->
                 sh ‘docker ps’
                 sh ‘curl localhost’
         }
