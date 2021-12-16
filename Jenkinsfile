@@ -1,6 +1,6 @@
-pipeline {
-    agent any
-  
+node {
+
+          
         stage('build image'){ 
             steps{   
                 sh "sudo docker build -t monapp . "
