@@ -1,31 +1,19 @@
-node {
-      def myapp
-	stage(‘Clone’) {
-			Checkout gdc
-	}
-
-	stage(‘Build Image’) {
-	       myapp = docker.build(“monapp”)
-	}
-
-	stage(‘Test Image’) {
-		docker.image(‘monapp’).withRun(‘ -p 8080:8080’ ) { c ->
-		sh ‘docker ps’
-		sh ‘curl localhost’
-		}
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+pipeline {
+     agent any
+     stages{ 
+        stage('build image'){ 
+            steps{   
+                sh "sudo docker build -t monapp . "
+         
+             }
+        }
+        stage('Run Image') {
+		steps{
+                	sh " sudo docker run -p 80:8080 monapp "
+                }
+               
+        }
+        
+    }
+    
+ }
