@@ -1,7 +1,7 @@
 node {
       def myapp
 	stage(‘Clone’) {
-			Checkout SCM
+			Checkout gdc
 	}
 
 	stage(‘Build Image’) {
